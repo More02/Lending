@@ -446,7 +446,7 @@
                                         <div class="col-lg-12">
                                             <div class="form-group mt-1">
                                                 <label class="contact-lable">Телефон</label>
-                                                <input name="email" id="phone" class="form-control" type="text" />
+                                                <input name="phone" id="phone" class="form-control" type="text" />
                                             </div>
                                         </div>
                                     </div>
@@ -526,39 +526,93 @@
 
         <!-- Main Js -->
         <script src="js/app.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>  
-<script src="https://webtracking-v01.bpmonline.com/JS/track-cookies.js"></script>
-<script src="https://webtracking-v01.bpmonline.com/JS/create-object.js"></script>
-<script>
+		
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://webtracking-v01.bpmonline.com/JS/track-cookies.js"></script>
+    <script src="https://webtracking-v01.bpmonline.com/JS/create-object.js"></script>
+    <script>
+	/**
+    * Replace the "css-selector" placeholders in the code below with the element selectors on your landing page.
+    * You can use #id or any other CSS selector that will define the input field explicitly.
+    * Example: "Email": "#MyEmailField".
+    * If you don't have a field from the list below placed on your landing, leave the placeholder or remove the line.
+    */
+	var config = {
+        fields: {
+            "FullName": "#name", // Name of a visitor, submitting the page
+            "Email": "#email", // Visitor's email
+            "Phone": "#phone", // Visitor's phone number
+            // "Company": "#company", // Name of a company (for business landing pages)
+
+            // "Zip": "css-selector", // Visitor's ZIP code
+            // "Industry": "css-selector", // Company industry (for business landing pages)
+            // "FullJobTitle": "css-selector", // Visitor's job title (for business landing pages)
+            // "UseEmail": "css-selector" // Logical value: 'true' equals to visitor's opt-in to receive emails 
+        },
+        contactFields: {
+            "FullName": "#name", // Name of a visitor, submitting the page
+            "Email": "#email", // Visitor's email
+            "Phone": "#phone", // Visitor's phone number
+            // "Company": "#company", // Name of a company (for business landing pages)
+        },
+        customFields: {"WebFormId":"2fe1f43b-9d86-476f-8a4d-68245a5c1613"},
+        landingId: "2fe1f43b-9d86-476f-8a4d-68245a5c1613",
+        serviceUrl: "https://108-0273903-service-enterprise-demo.creatio.com/0/ServiceModel/GeneratedObjectWebFormService.svc/SaveWebFormObjectData"",
+        redirectUrl: ""
+    };
+	/**
+    * The function below creates a object from the submitted data.
+    * Bind this function call to the "onSubmit" event of the form or any other elements events.
+    * Example: <form class="mainForm" name="landingForm" onSubmit="createObject(); return false">
+    */
+    function createObject() {
+        landing.createObjectFromLanding(config);
+        window.alert('Ваша заявка принята')
+    }
+    /**
+    * The function below inits landing page using URL parameters.
+    */
+    function initLanding() {
+        landing.initLanding(config);
+    }
+    jQuery(document).ready(initLanding);
+    </script>
+		
+		
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>   -->
+<!-- <script src="https://webtracking-v01.bpmonline.com/JS/track-cookies.js"></script> -->
+<!-- <script src="https://webtracking-v01.bpmonline.com/JS/create-object.js"></script> -->
+<!-- <script> -->
 
 
-var config = {
-    fields: {
-        "FullName": "#name", 
-        "PhoneNumber": "#phone", 
-        "Email": "#email" 
-    },
-    contactFields: {
-        "FullName": "#name", 
-        "Phone": "#phone", 
-        "Email": "#email" 
-    },
-    customFields: {"WebFormId":"2fe1f43b-9d86-476f-8a4d-68245a5c1613"},
-    landingId: "2fe1f43b-9d86-476f-8a4d-68245a5c1613",
-    serviceUrl: "https://108-0273903-service-enterprise-demo.creatio.com/0/ServiceModel/GeneratedObjectWebFormService.svc/SaveWebFormObjectData",
-    redirectUrl: "https://more02.github.io/Lending/"
-};
+<!-- var config = { -->
+    <!-- fields: { -->
+        <!-- "FullName": "#name",  -->
+        <!-- "PhoneNumber": "#phone",  -->
+        <!-- "Email": "#email"  -->
+    <!-- }, -->
+    <!-- contactFields: { -->
+        <!-- "FullName": "#name",  -->
+        <!-- "Phone": "#phone",  -->
+        <!-- "Email": "#email"  -->
+    <!-- }, -->
+    <!-- customFields: {"WebFormId":"2fe1f43b-9d86-476f-8a4d-68245a5c1613"}, -->
+    <!-- landingId: "2fe1f43b-9d86-476f-8a4d-68245a5c1613", -->
+    <!-- serviceUrl: "https://108-0273903-service-enterprise-demo.creatio.com/0/ServiceModel/GeneratedObjectWebFormService.svc/SaveWebFormObjectData", -->
+    <!-- redirectUrl: "https://more02.github.io/Lending/" -->
+<!-- }; -->
 
-function createObject() {
-    landing.createObjectFromLanding(config);
-	console.log("Объект создан");
-}
+<!-- function createObject() { -->
+    <!-- landing.createObjectFromLanding(config); -->
+	<!-- console.log("Объект создан"); -->
+<!-- } -->
 
-function initLanding() {
-    landing.initLanding(config);
-	console.log("Объект лендинг");
-}
-jQuery(document).ready(initLanding);
+<!-- function initLanding() { -->
+    <!-- landing.initLanding(config); -->
+	<!-- console.log("Объект лендинг"); -->
+<!-- } -->
+<!-- jQuery(document).ready(initLanding); -->
 </script>
     </body>
 </html>
