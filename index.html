@@ -478,42 +478,6 @@
         <!-- END CONTACT -->
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="https://webtracking-v01.bpmonline.com/JS/track-cookies.js"></script>
-<script src="https://webtracking-v01.bpmonline.com/JS/create-object.js"></script>
-<script>
-
-
-var config = {
-    fields: {
-        "FullName": "#name", 
-        "PhoneNumber": "#phone", 
-        "Email": "#email" 
-    },
-    contactFields: {
-        "FullName": "#name", 
-        "Phone": "#phone", 
-        "Email": "#email" 
-    },
-    customFields: {"WebFormId":"2fe1f43b-9d86-476f-8a4d-68245a5c1613"},
-    landingId: "2fe1f43b-9d86-476f-8a4d-68245a5c1613",
-    serviceUrl: "https://108-0273903-service-enterprise-demo.creatio.com/0/ServiceModel/GeneratedObjectWebFormService.svc/SaveWebFormObjectData",
-    redirectUrl: "https://more02.github.io/Lending/"
-};
-
-function createObject() {
-    landing.createObjectFromLanding(config);
-}
-
-function initLanding() {
-    landing.initLanding(config);
-}
-jQuery(document).ready(initLanding);
-</script>
-
-
-
-
         <!-- START FOOTER -->
         <section class="section bg-light pb-5">
             <div class="container">
@@ -562,5 +526,37 @@ jQuery(document).ready(initLanding);
 
         <!-- Main Js -->
         <script src="js/app.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://webtracking-v01.bpmonline.com/JS/track-cookies.js"></script>
+<script src="https://webtracking-v01.bpmonline.com/JS/create-object.js"></script>
+<script>
+
+
+var config = {
+    fields: {
+        "FullName": "#name", 
+        "PhoneNumber": "#phone", 
+        "Email": "#email" 
+    },
+    contactFields: {
+        "FullName": "#name", 
+        "Phone": "#phone", 
+        "Email": "#email" 
+    },
+    customFields: {"WebFormId":"2fe1f43b-9d86-476f-8a4d-68245a5c1613"},
+    landingId: "2fe1f43b-9d86-476f-8a4d-68245a5c1613",
+    serviceUrl: "https://108-0273903-service-enterprise-demo.creatio.com/0/ServiceModel/GeneratedObjectWebFormService.svc/SaveWebFormObjectData",
+    redirectUrl: "https://more02.github.io/Lending/"
+};
+
+function createObject() {
+    landing.createObjectFromLanding(config);
+}
+
+function initLanding() {
+    landing.initLanding(config);
+}
+jQuery(document).ready(initLanding);
+</script>
     </body>
 </html>
